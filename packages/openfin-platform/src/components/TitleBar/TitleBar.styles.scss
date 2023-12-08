@@ -1,30 +1,6 @@
 @import './../../styles/index.scss';
 
-@mixin tag() {
-  font-size: 0.7em;
-  border-radius: 2px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: 0 3px;
-}
-
-@mixin gray-tag() {
-  @include tag();
-  background-color: var(--dark-gray4);
-  color: var(--gray3);
-  border: 1px solid var(--gray1);
-}
-
-@mixin orange-tag() {
-  @include tag();
-  color: var(--gray3);
-  background-color: var(--orange1);
-  border: 1px solid var(--orange3);
-}
-
 #title-bar {
-
     width: 100%;
     height: var(--title-bar-height);
     margin: 0;
@@ -34,23 +10,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    .main-menu-bar {
-      display: flex;
-
-      .main-menu-button {
-        text-align: left;
-        padding: 0 0.5rem;
-        outline: none;
-        border: none;
-        background: transparent;
-
-        &:hover,
-        &.active {
-          background-color: var(--dark-gray3);
-        }
-      }
-    }
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
 
     #app-title-container {
       display: flex;
@@ -59,97 +20,24 @@
       border-right: 1px solid var(--dark-gray5);
       user-select: none;
       min-width: 38px;
-      -webkit-app-region: drag;
-      -webkit-user-select: none;
-    }
-
-    .title-bar-left-container {
-      display: flex;
-      flex-direction: row;
-
-      .menu-button {
-        width: 23px;
-        height: 23px;
-        margin: -1px 0 0 -1px;
-        padding-top: 1px;
-        outline: none;
-        background-color: var(--dark-gray4);
-        border: 1px solid var(--black);
-        border-radius: 2px;
-        &:focus {
-          outline: none;
-        }
-        &:hover {
-          background-color: var(--blue1);
-        }
-      }
-    }
-
-    .title-bar-draggable {
-      margin: auto 0;
+      flex-grow: 0;
+      flex-shrink: 0;
     }
 
     .title-bar-center-container {
+      margin: auto 0;
       display: flex;
+      flex-grow: 1;
+      flex-shrink: 1;
       flex-direction: row;
       justify-content: flex-end;
-
-      .save-workspace-spinner {
-        padding-right: 8px;
-      }
-
-      .auth-info-container {
-        height: auto;
-        margin: auto 5px auto 1px;
-        padding: 0;
-        justify-self: flex-end;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-
-        .auth-name {
-          font-size: 0.8em;
-          margin: auto 5px auto 0;
-          padding: 2px 5px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          color: var(--gray4);
-          border-left: 1px solid var(--frame-border-color);
-        }
-      }
-
-      .connection-status {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 5px;
-        padding-right: 5px;
-        border-left: 1px solid var(--frame-border-color);
-
-        -webkit-app-region: no-drag;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      .env-name {
-        padding: 1px 5px 0 5px;
-        border-left: 1px solid var(--frame-border-color);
-
-        .env-name-tag {
-          @include orange-tag();
-          &.prod {
-            @include gray-tag();
-          }
-        }
-      }
     }
 
     .buttons-wrapper {
       justify-self: flex-end;
       border-left: 1px solid var(--frame-border-color);
+      flex-grow: 0;
+      flex-shrink: 0;
 
       .button {
         width: 22px;

@@ -181,37 +181,13 @@ const getFileCopyPatterns = (webpackEnv) => {
       info: { minimized: true },
     },
     {
-      from: path.resolve(publicPath, '../../common/public', 'config.js'),
-      to: 'config.js',
-      info: { minimized: true },
-    },
-    {
       from: path.resolve(publicPath, 'openfinreact.app.json'),
       to: 'openfinreact.app.json',
       info: { minimized: true },
     },
-    {
-      from: path.resolve(publicPath, 'version.json'),
-      to: '',
-      transform(buffer) {
-        const versionInfo = JSON.parse(buffer.toString());
-        versionInfo.version = getBuildVersion();
-        return Buffer.from(JSON.stringify(versionInfo, null, 2));
-      },
-    },
   ];
 
   return patterns;
-};
-
-const getBuildVersion = () => {
-  const major = process.env.E7_MAJOR || 0;
-  const minor = process.env.E7_MINOR || 0;
-  const patch = process.env.E7_BUILD_NUMBER || 0;
-  if (major || minor || patch) {
-    return `${major}.${minor}.${patch}`;
-  }
-  return 'development';
 };
 
 const getPlugins = (webpackEnv) => {

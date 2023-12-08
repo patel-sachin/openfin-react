@@ -1,10 +1,8 @@
-import { FontAwesomeIcon, SolidIcons } from '@openfin-react/common/src';
+import { FontAwesomeIcon, SolidIcons } from './../../icons';
 import { fin } from '@openfin/core';
 import React from 'react';
 import { useElementSize } from 'usehooks-ts';
-import { MainMenu } from './MainMenu';
 import './TitleBar.styles.scss';
-import clsx from 'clsx';
 
 enum EWindowState {
   NORMAL = 'NORMAL',
@@ -14,8 +12,7 @@ enum EWindowState {
 
 export const TitleBar = () => {
   const [windowState, setWindowState] = React.useState<EWindowState>(EWindowState.NORMAL);
-  const [titleBarRef, { width }] = useElementSize();
-  const environmentName = window.env.NAME;
+  const [titleBarRef] = useElementSize();
 
   const minimizeWindow = async () => {
     const window = await fin.Window.getCurrent();
@@ -53,7 +50,16 @@ export const TitleBar = () => {
       return;
     }
 
-    await window.close();
+    await window.close(true);
+
+    const childWindows = await fin.Application.getCurrentSync().getChildWindows();
+    if (!childWindows) {
+      return;
+    }
+
+    if (childWindows.length === 0) {
+      fin.Application.getCurrentSync().close(true);
+    }
   };
 
   React.useEffect(() => {
@@ -82,14 +88,7 @@ export const TitleBar = () => {
           alt="OpenFin-React"
         />
       </div>
-      <MainMenu collapsed={width < 500} />
-      <div className="title-bar-draggable title-bar-center-container">
-        <div className="auth-info-container">
-          <div className="env-name">
-            <div className={clsx('env-name-tag', environmentName)}>{environmentName}</div>
-          </div>
-        </div>
-      </div>
+      <div className="title-bar-center-container"></div>
       <div className="buttons-wrapper">
         <button
           className="button"

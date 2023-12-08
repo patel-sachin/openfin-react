@@ -6,26 +6,11 @@
   ],
   "scripts": {
     "clean-misc-files": "npx rimraf **/.npm*.log",
-    "clean-dist-apps": "npm run clean-dist -w @openfin-react/apps",
-    "clean-dist-openfin-platform": "npm run clean-dist -w @openfin-react/openfin-platform",
-    "clean-dist-root": "npx rimraf dist",
-    "clean-dist": "npm run clean-dist-apps && npm run clean-dist-openfin-platform && npm run clean-dist-root",
-    "clean-all": "npm run clean-dist && npm run clean-misc-files && npx rimraf **/node_modules",
-    "lint-all": "npm run lint --ws",
-    "format-all": "npm run format --ws",
-    "build:dev:apps": "cd packages/apps && npm run build:dev",
-    "build:dev:openfin-platform": "cd packages/openfin-platform && npm run build:dev",
-    "start:apps-react-devtools": "cd packages/apps && npm run react-devtools",
-    "start:apps": "npx kill-port 3000 && cd packages/apps && npm run start",
-    "serve:platform": "npx kill-port 3200 && cd packages/openfin-platform && npm run serve-platform",
-    "launch:platform": "cd packages/openfin-platform && npm run launch-platform",
-    "build:prod:apps": "cd packages/apps && npm run build:prod",
-    "build:prod:apps:analyze": "cd packages/apps && npm run build:prod:analyze",
-    "build:prod:openfin-platform": "cd packages/openfin-platform && npm run build:prod",
-    "build:prod": "npm run build:prod:apps && npm run build:prod:openfin-platform"
+    "clean": "npm run clean-misc-files && npx rimraf **/node_modules",
+    "serve": "npx kill-port 3200 && cd packages/openfin-platform && npm run serve-platform",
+    "launch": "cd packages/openfin-platform && npm run launch-platform"
   },
   "devDependencies": {
-    "concurrently": "^7.2.2",
     "kill-port": "^2.0.0",
     "rimraf": "^3.0.2"
   }

@@ -1,11 +1,9 @@
-import { IpcBusPublisher, isMainWindow } from '@openfin-react/common/src';
 import OpenFin, { fin } from '@openfin/core';
+import { isMainWindow } from '../utils/openfinUtils';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const overrideCallback = async (PlatformProvider): PlatformProvider => {
-  const ipcBusPublisher = await IpcBusPublisher.getInstanceAsync();
-
   class MyOverride extends PlatformProvider {
     /*
       We shouldn't need to override this function, but there appears to be a bug in OpenFin when both, `close-requested` and `beforeunload` events are used.
