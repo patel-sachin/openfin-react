@@ -1,5 +1,5 @@
 {
-  "licenseKey": "c2140e66-40c2-4020-b172-dbde66e8380b",
+  "licenseKey": "<openfin-license-here>",
   "runtime": {
     "arguments": "--v=1 --inspect --remote-debugging-port=9222",
     "version": "32.114.76.14"
