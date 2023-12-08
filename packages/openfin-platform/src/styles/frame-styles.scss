@@ -1,0 +1,104 @@
+.hidden {
+  display: none;
+}
+
+.lm_header {
+  z-index: 1 !important;
+  border: none;
+
+  .lm_tabs {
+    z-index: -1 !important;
+
+    .lm_active {
+      z-index: -1 !important;
+      border: 1px solid var(--dark-gray5);
+    }
+
+    .focused_tab {
+      border: 1px solid var(--tab-focused-border-color);
+      background-color: var(--tab-header-focused-background-color);
+    }
+
+    .lm_tab {
+      outline: 1px solid var(--dark-gray2);
+      margin: 2px 0 0 0;
+      z-index: -1 !important;
+
+      .lm_left {
+        display: none;
+      }
+      .lm_right {
+        display: none;
+      }
+
+      .lm_title {
+        position: relative;
+        top: 0;
+        left: 2px;
+        font-weight: bold;
+      }
+
+      .lm_close_tab {
+        background-color: var(--dark-gray1);
+        border: 0.5px solid var(--gray1);
+        border-radius: 2px;
+        position: absolute;
+        top: 5.5px;
+        right: 3px;
+        height: 17px;
+        width: 17px;
+
+        &:hover {
+          background-color: var(--red1);
+        }
+      }
+    }
+  }
+}
+
+#of-frame-main {
+  border: var(--frame-border-width) solid var(--frame-border-color);
+
+  .main {
+    display: flex;
+    height: calc(100% - var(--title-bar-height));
+
+    .content {
+      flex: 1;
+    }
+  }
+
+  #sidebar {
+    background-color: var(--dark-gray1);
+
+    /*
+     Override Blueprint's focus handler
+     Use box-shadow instead of outline otherwise the outline is not always fully visible
+    */
+    * :focus {
+      outline: none;
+      box-shadow: inset 0 0 0 2px rgba(45, 114, 210, 0.6);
+    }
+  }
+
+  #body-container {
+    display: flex;
+
+    #outer-layout-container {
+      transition: 0.1s;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      height: 100%;
+      width: 100%;
+
+      #layout-container {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "target": "es2015",
+    "lib": ["ES5", "ES2015", "ES2016", "DOM", "DOM.Iterable", "ESNext"],
+    "module": "es2015",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "pretty": true,
+    "removeComments": false,
+    "jsx": "react",
+    "sourceMap": true,
+    "stripInternal": true,
+    "declaration": true,
+    "declarationMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "checkJs": false,
+    "composite": true,
+    "typeRoots": ["/node_modules/@types"]
+  },
+  "references": [
+    {
+      "path": "./apps/tsconfig.json"
+    },
+    {
+      "path": "./common/tsconfig.json"
+    },
+    {
+      "path": "./openfin-platform/tsconfig.json"
+    }
+  ]
+}

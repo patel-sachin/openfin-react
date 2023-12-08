@@ -1,0 +1,5 @@
+{
+  "extends": "./../tsconfig.base.json",
+  "files": ["../../global.d.ts", "global.d.ts"],
+  "include": ["src/**/*", "./../common/src/**/*", "./../common/styles/**/*", "src/**/*.json"]
+}

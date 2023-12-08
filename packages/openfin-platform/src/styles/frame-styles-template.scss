@@ -1,0 +1,98 @@
+/* This is a copy of the default CSS that is loaded on your Platform Windows.  */
+/* Use this as a reference to set your color, icon, and spacing preferences. */
+
+:root {
+  --frame-background-color: var(--kea-surface-color);
+  --frame-border-width: 1px;
+  --frame-border-color: var(--dark-gray4);
+
+  --body-font-color: var(--gray5);
+
+  --splitter-color: var(--blue1);
+  --splitter-hover-color: var(--blue4);
+
+  --drop-target-border-color: var(--dark-blue1);
+  --drop-target-background-color: var(--dark-blue6);
+
+  --color-behind-views: var(--dark-blue6); /* only seen if there's a problem with the view */
+
+  --title-bar-background-color: var(--dark-gray1);
+
+  --top-bar-close-button-color: var(--red1);
+  --top-bar-close-button-active-color: var(--red1);
+  --top-bar-button-hover-color: var(--blue1);
+  --top-bar-button-active-color: var(--green1);
+
+  --tabs-bar-background-color: var(--black);
+
+  --tab-border-top-highlight-color: var(--blue4);
+  --tab-font-color: var(--white);
+  --tab-background-color: var(--dark-gray2);
+  --tab-background-active-color: var(--dark-gray3);
+
+  --tab-button-hover-color: var(--red1);
+
+  --title-bar-height: 24px;
+  --title-bar-border-bottom-height: 1px;
+  --corner-radius: 2px;
+  --splitter-width: 2px;
+
+  --global-time-controller-height: 40px;
+  // same as --global-time-controller-height
+  --sidebar-header-height: 40px;
+
+  --sidebar-width-collapsed: 34px;
+
+  --body-container-padding-top: 0px;
+  --body-container-padding-right: 0px;
+  --body-container-padding-bottom: 0px;
+  --body-container-padding-left: 0px;
+
+  --body-container-width: calc(
+    100%
+    - var(--body-container-padding-left)
+    - var(--body-container-padding-right)
+  );
+
+  --body-container-height: calc(
+    100%
+    - var(--body-container-padding-top)
+    - var(--body-container-padding-bottom)
+    - var(--global-time-controller-height)
+  );
+
+  --body-container-padding: var(--body-container-padding-top) var(--body-container-padding-right) var(--body-container-padding-bottom) var(--body-container-padding-left);
+
+  --layout-container-padding-top: 0px;
+  --layout-container-padding-right: 0px;
+  --layout-container-padding-bottom: 0px;
+  --layout-container-padding-left: 0px;
+
+  --layout-container-from-top: calc(
+    var(--title-bar-height)
+    + var(--title-bar-border-bottom-height)
+    + var(--layout-container-padding-top)
+  );
+
+  --layout-container-width: calc(
+    100%
+    - var(--layout-container-padding-left)
+    - var(--layout-container-padding-right)
+  );
+
+  --layout-container-height: calc(
+    100%
+    - var(--header-border-bottom-height)
+    - var(--layout-container-padding-top)
+    - var(--layout-container-padding-bottom)
+  );
+
+  --layout-container-padding: var(--layout-container-padding-top) var(--layout-container-padding-right) var(--layout-container-padding-bottom) var(--layout-container-padding-left);
+
+  --tab-close-button-url: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IjAyIC0gSUNPTlMvWC9EYXJrIFQuIj4KPHBhdGggaWQ9IkNvbWJpbmVkIFNoYXBlIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTcuNDI2MDEgNi4xNjEwN0M3LjA3MTcgNS45MTU2MyA2LjU4MTg0IDUuOTUwNjkgNi4yNjYyNyA2LjI2NjI3QzUuOTExMjQgNi42MjEyOSA1LjkxMTI0IDcuMTk2ODkgNi4yNjYyNyA3LjU1MTkyTDE0LjcxNDQgMTZMNi4yNjYyNyAyNC40NDgxTDYuMTYxMDcgMjQuNTc0QzUuOTE1NjMgMjQuOTI4MyA1Ljk1MDY5IDI1LjQxODIgNi4yNjYyNyAyNS43MzM3QzYuNjIxMjkgMjYuMDg4OCA3LjE5Njg5IDI2LjA4ODggNy41NTE5MiAyNS43MzM3TDE2IDE3LjI4NTZMMjQuNDQ4MSAyNS43MzM3TDI0LjU3NCAyNS44Mzg5QzI0LjkyODMgMjYuMDg0NCAyNS40MTgyIDI2LjA0OTMgMjUuNzMzNyAyNS43MzM3QzI2LjA4ODggMjUuMzc4NyAyNi4wODg4IDI0LjgwMzEgMjUuNzMzNyAyNC40NDgxTDE3LjI4NTYgMTZMMjUuNzMzNyA3LjU1MTkyTDI1LjgzODkgNy40MjYwMUMyNi4wODQ0IDcuMDcxNyAyNi4wNDkzIDYuNTgxODQgMjUuNzMzNyA2LjI2NjI3QzI1LjM3ODcgNS45MTEyNCAyNC44MDMxIDUuOTExMjQgMjQuNDQ4MSA2LjI2NjI3TDE2IDE0LjcxNDRMNy41NTE5MiA2LjI2NjI3TDcuNDI2MDEgNi4xNjEwN1oiIGZpbGw9IiNGMkY0RjkiLz4KPC9nPgo8L3N2Zz4K');
+
+  // used by Allotment library - make the resize line same color as the OpenFin ones
+  --focus-border: var(--splitter-hover-color);
+
+  --sidebar-panel-header-height: 32px;
+}

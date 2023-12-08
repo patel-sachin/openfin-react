@@ -1,0 +1,14 @@
+.tmp
+/dist/
+/node_modules/
+coverage/
+/tests/format/**/*.*
+!/tests/format/**/jsfmt.spec.js
+/tests/integration/cli/
+/tests/integration/plugins/
+/tests/integration/custom-parsers/
+/website/build/
+/website/static/lib/
+/website/static/playground.js
+.nyc_output
+/vendors/

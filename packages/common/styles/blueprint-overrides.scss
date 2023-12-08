@@ -1,0 +1,104 @@
+@import '~normalize.css';
+@import '~@blueprintjs/core/lib/css/blueprint.css';
+@import '~@blueprintjs/datetime/lib/css/blueprint-datetime.css';
+@import '~@blueprintjs/popover2/lib/css/blueprint-popover2.css';
+@import '~@blueprintjs/select/lib/css/blueprint-select.css';
+@import '~@blueprintjs/timezone/lib/css/blueprint-timezone.css';
+@import '~@blueprintjs/icons/lib/css/blueprint-icons.css';
+@import '~@blueprintjs/core/lib/scss/variables';
+@import './variables.scss';
+
+:root {
+  .bp4-input,
+  .bp4-button-text {
+    font-size: $pt-font-size;
+  }
+
+  .bp4-heading {
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .bp4-dark {
+    .bp4-label {
+      margin-bottom: 0.5rem !important;
+      color: $label-foreground-color;
+    }
+  }
+
+  .select {
+  }
+
+  .bp4-input-group {
+    //padding: 0;
+    //margin: 0;
+
+    input {
+      //padding: 0 0.5rem;
+      //margin: 0;
+      //height: 2.2rem;
+      //font-size: $pt-font-size;
+    }
+
+    .bp4-input-action {
+      //margin: -1.5px -1.5px 2px 0;
+
+      .bp4-button {
+        //height: 10px;
+      }
+
+      .bp4-icon {
+        //margin: 0.5rem 0.1rem;
+        //padding: 0;
+      }
+    }
+  }
+
+  .bp4-timepicker {
+    //height: 0.5rem;
+
+    .bp4-timepicker-input-row {
+      //padding: 0;
+      //margin: 0;
+      //height: auto;
+      //width: auto;
+
+      .bp4-timepicker-divider-text {
+        padding: 0 0.1rem;
+        margin: 0;
+        width: auto;
+      }
+
+      .bp4-timepicker-hms-common {
+        padding: 0 0.5rem;
+        //width: 1.5rem;
+      }
+
+      .bp4-timepicker-hour {
+        @extend .bp4-timepicker-hms-common;
+      }
+
+      .bp4-timepicker-minute {
+        @extend .bp4-timepicker-hms-common;
+      }
+
+      .bp4-timepicker-second {
+        @extend .bp4-timepicker-hms-common;
+      }
+    }
+  }
+
+  .bp4-datepicker {
+    background: var(--kea-surface-color);
+
+    .bp4-timepicker-input-row, .bp4-timepicker-ampm-select select {
+      background-color: var(--kea-surface-color);
+      box-shadow: inset 0 0 0 1px rgb(255 255 255 / 10%), 0 1px 2px rgb(17 20 24 / 20%);
+
+      option {
+        background-color: var(--kea-surface-color);
+      }
+    }
+  }
+}

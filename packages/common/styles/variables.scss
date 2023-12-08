@@ -1,0 +1,16 @@
+@import '~@blueprintjs/core/lib/scss/variables';
+
+$pt-grid-size: 1;
+$label-foreground-color: #84b8ff;
+$app-background-color: #131415;
+$app-surface-color: #1C1D1F;
+$app-primary-color: #2d72d2;
+$app-secondary-color: #929496;
+$app-on-background-color: #E2E2E2;
+$app-on-surface-color: #E2E2E2;
+$app-on-primary-color: #131415;
+$app-on-secondary-color: #131415;
+
+:root {
+  --grid-size: #{$pt-grid-size};
+}

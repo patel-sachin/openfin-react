@@ -1,0 +1,135 @@
+@import '~@blueprintjs/core/lib/scss/variables';
+@import './variables';
+
+:root {
+    --black: #{$black};
+    --white: #{$white};
+
+    --dark-app-background-color: #{$pt-dark-app-background-color};
+    --label-foreground-color: #{$label-foreground-color};
+
+    --dark-gray1: #{$dark-gray1};
+    --dark-gray2: #{$dark-gray2};
+    --dark-gray3: #{$dark-gray3};
+    --dark-gray4: #{$dark-gray4};
+    --dark-gray5: #{$dark-gray5};
+
+    --light-gray1: #{$light-gray1};
+    --light-gray2: #{$light-gray2};
+    --light-gray3: #{$light-gray3};
+    --light-gray4: #{$light-gray4};
+    --light-gray5: #{$light-gray5};
+
+    --gray1: #{$gray1};
+    --gray2: #{$gray2};
+    --gray3: #{$gray3};
+    --gray4: #{$gray4};
+    --gray5: #{$gray5};
+
+    --blue1: #{$blue1};
+    --blue2: #{$blue2};
+    --blue3: #{$blue3};
+    --blue4: #{$blue4};
+    --blue5: #{$blue5};
+
+    --dark-blue1: #1b4e91;
+    --dark-blue2: #163e74;
+    --dark-blue3: #102f57;
+    --dark-blue4: #0b1f3a;
+    --dark-blue5: #151F30;
+    --dark-blue6: #05101d;
+
+    --green1: #{$green1};
+    --green2: #{$green2};
+    --green3: #{$green3};
+    --green4: #{$green4};
+    --green5: #{$green5};
+
+    --red1: #{$red1};
+    --red2: #{$red2};
+    --red3: #{$red3};
+    --red4: #{$red4};
+    --red5: #{$red5};
+
+    --orange1: #{$orange1};
+    --orange2: #{$orange2};
+    --orange3: #{$orange3};
+    --orange4: #{$orange4};
+    --orange5: #{$orange5};
+
+    --vermilion1: #{$vermilion1};
+    --vermilion2: #{$vermilion2};
+    --vermilion3: #{$vermilion3};
+    --vermilion4: #{$vermilion4};
+    --vermilion5: #{$vermilion5};
+
+    --rose1: #{$rose1};
+    --rose2: #{$rose2};
+    --rose3: #{$rose3};
+    --rose4: #{$rose4};
+    --rose5: #{$rose5};
+
+    --violet1: #{$violet1};
+    --violet2: #{$violet2};
+    --violet3: #{$violet3};
+    --violet4: #{$violet4};
+    --violet5: #{$violet5};
+
+    --indigo1: #{$indigo1};
+    --indigo2: #{$indigo2};
+    --indigo3: #{$indigo3};
+    --indigo4: #{$indigo4};
+    --indigo5: #{$indigo5};
+
+    --cerulean1: #{$cerulean1};
+    --cerulean2: #{$cerulean2};
+    --cerulean3: #{$cerulean3};
+    --cerulean4: #{$cerulean4};
+    --cerulean5: #{$cerulean5};
+
+    --turquoise1: #{$turquoise1};
+    --turquoise2: #{$turquoise2};
+    --turquoise3: #{$turquoise3};
+    --turquoise4: #{$turquoise4};
+    --turquoise5: #{$turquoise5};
+
+    --forest1: #{$forest1};
+    --forest2: #{$forest2};
+    --forest3: #{$forest3};
+    --forest4: #{$forest4};
+    --forest5: #{$forest5};
+
+    --lime1: #{$lime1};
+    --lime2: #{$lime2};
+    --lime3: #{$lime3};
+    --lime4: #{$lime4};
+    --lime5: #{$lime5};
+
+    --gold1: #{$gold1};
+    --gold2: #{$gold2};
+    --gold3: #{$gold3};
+    --gold4: #{$gold4};
+    --gold5: #{$gold5};
+
+    --sephia1: #{$sepia1};
+    --sephia2: #{$sepia2};
+    --sephia3: #{$sepia3};
+    --sephia4: #{$sepia4};
+    --sephia5: #{$sepia5};
+
+    --kea-background-color: #{$app-background-color};
+    --kea-surface-color: #{$app-surface-color};
+    --kea-on-background-color: #{$app-on-background-color};
+    --kea-on-surface-color: #{$app-on-surface-color};
+    --kea-on-primary-color: #{$app-on-primary-color};
+    --kea-on-secondary-color: #{$app-on-secondary-color};
+    --kea-muted-text-color: #{$gray2};
+    --kea-border-color: #{$dark-gray2};
+
+    --kea-primary-color: #{$app-primary-color};
+    --kea-danger-color: #{$red3};
+    --kea-warning-color: #{$orange4};
+
+    --tab-focused-border-color: #55b8ff;
+    --tab-header-focused-background-color: #0168a9;
+}

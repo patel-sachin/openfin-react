@@ -1,0 +1,110 @@
+{
+  "licenseKey": "c2140e66-40c2-4020-b172-dbde66e8380b",
+  "runtime": {
+    "arguments": "--v=1 --inspect --remote-debugging-port=9222",
+    "version": "32.114.76.14"
+  },
+  "shortcut": {
+    "company": "",
+    "name": "OpenFin-React",
+    "startMenuRootFolder": "OpenFin",
+    "icon": "http://localhost:3200/fin/favicon.ico"
+  },
+  "supportInformation": {
+    "company": "OpenFin",
+    "email": "someone@nowhere.com",
+    "enableErrorReporting": false,
+    "forwardErrorReports": false,
+    "moreInfoUrl": "",
+    "product": "Seed"
+  },
+  "platform": {
+    "name": "OpenFin-React-Seed",
+    "uuid": "openfinreact-localdev-d6d5f1c0-bb6b-4916-bf3b-94d52b7d0bc6",
+    "title": "OpenFin-React",
+    "autoShow": false,
+    "enableBeforeUnload": true,
+    "providerUrl": "http://localhost:3200/provider.html",
+    "enableAppLogging": true,
+    "logManagement": {
+      "enabled": false
+    },
+    "permissions": {
+      "ExternalWindow": {
+        "wrap": true
+      },
+      "System": {
+        "getAllExternalWindows": true,
+        "launchExternalProcess": true,
+        "readRegistryValue": false,
+        "terminateExternalProcess": true
+      }
+    },
+    "defaultWindowOptions": {
+      "url": "http://localhost:3200/platform.html",
+      "contextMenuSettings": {
+        "reload": true,
+        "devtools": true,
+        "enable": true
+      },
+      "autoShow": true,
+      "closeOnLastViewRemoved": false,
+      "showTaskbarIcon": true,
+      "defaultWidth": 900,
+      "defaultHeight": 720,
+      "defaultLeft": 10,
+      "defaultTop": 10,
+      "saveWindowState": true,
+      "backgroundThrottling": true,
+      "minHeight": 445,
+      "minWidth": 354,
+      "shadow": true,
+      "experimental": {
+        "analytics": false,
+        "showViewsOnResize": {
+          "enabled": true,
+          "delayMs": 50
+        }
+      }
+    },
+    "defaultViewOptions": {
+      "accelerator": {
+        "zoom": false
+      },
+      "experimental": {
+        "childWindows": true,
+        "analytics": false
+      }
+    },
+    "commands": [
+      {
+        "command": "view.focusLeft"
+      },
+      {
+        "command": "view.focusRight"
+      },
+      {
+        "command": "view.focusUp"
+      },
+      {
+        "command": "view.focusDown"
+      }
+    ]
+  },
+  "snapshot": {
+    "windows": [
+      {
+        "name": "openfinreact-main-window",
+        "layout": {
+          "content": [
+            {
+              "type": "stack",
+              "id": "no-drop-target",
+              "content": []
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
