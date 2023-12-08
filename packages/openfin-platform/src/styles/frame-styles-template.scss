@@ -1,8 +1,5 @@
-/* This is a copy of the default CSS that is loaded on your Platform Windows.  */
-/* Use this as a reference to set your color, icon, and spacing preferences. */
-
 :root {
-  --frame-background-color: var(--kea-surface-color);
+  --frame-background-color: var(--openfin-react-surface-color);
   --frame-border-width: 1px;
   --frame-border-color: var(--dark-gray4);
 
@@ -14,7 +11,7 @@
   --drop-target-border-color: var(--dark-blue1);
   --drop-target-background-color: var(--dark-blue6);
 
-  --color-behind-views: var(--dark-blue6); /* only seen if there's a problem with the view */
+  --color-behind-views: var(--dark-blue6);
 
   --title-bar-background-color: var(--dark-gray1);
 
