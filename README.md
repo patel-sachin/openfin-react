@@ -18,11 +18,7 @@ C:\someFolder\openfin-react
 ├── node_modules
 ├── package.json
 ├── packages
-│   ├── apps
-│   ├── common
 │   ├── openfin-platform
-├── poc-meeting-notes
-└── npm run.lock
 ```
 
 # SCRIPTS
@@ -32,25 +28,15 @@ C:\someFolder\openfin-react
 ## STEP-1:
 
 - Install all dependencies
-- use `npm run install --frozen-lockfile`
+- use `npm run install`
 
 ## STEP-2:
 
-- Run `apps`
-- use `npm run start:apps`
-- this will start a react app on `localhost:3000`
-- most of the features in these apps are meant to run under `openfin-platform` project
-  - but you can still run the apps in browser without these features -- eg. to style and layout your react component. 
-  - It will be easier to do that with browser than in openfin-platform.
-  - then use the entries defined in `webpack.common.js` to start one of the apps
-
-## STEP-3:
-
 - we need to serve `openfin-platform`
-- use `npm run serve:platform`
+- use `npm run serve`
   - this will serve the platform on `localhost:3100`
 
 ## STEP-4:
 
 - launch Openfin Platform with the manifest served from `localhost:3100`
-- use `npm run launch:platform`
+- use `npm run launch`
