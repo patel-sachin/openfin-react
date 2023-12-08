@@ -17,7 +17,7 @@
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -27,6 +27,7 @@ body {
   'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
 
 img, picture, video, canvas, svg {
@@ -48,4 +49,12 @@ p, h1, h2, h3, h4, h5, h6 {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+#app {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
 }

@@ -9,20 +9,14 @@ const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const srcPath = path.resolve(__dirname, '..', 'src');
-const commonPublicPath = path.resolve(__dirname, '..', '..', 'common/public');
-const commonSrcPath = path.resolve(__dirname, '..', '..', 'common/src');
-const commonStylesPath = path.resolve(__dirname, '..', '..', 'common/styles');
 const buildDir = path.resolve(__dirname, '../../../dist/fin');
 const publicPath = path.resolve(__dirname, '../public');
 console.log(`       __dirname: ${__dirname}`);
 console.log(`           public: ${publicPath}`);
 console.log(`          srcPath: ${srcPath}`);
-console.log(`commonPublicPath: ${commonPublicPath}`);
-console.log(`   commonSrcPath: ${commonSrcPath}`);
-console.log(`commonStylesPath: ${commonStylesPath}`);
 console.log(`         buildDir: ${buildDir}`);
 
-const htmlTemplate = path.resolve(commonPublicPath, 'template.html');
+const htmlTemplate = path.resolve(publicPath, 'template.html');
 
 const components = [
   {
@@ -35,6 +29,12 @@ const components = [
     entryName: 'platform',
     path: path.resolve(srcPath, 'components/Platform.tsx'),
     htmlTemplate: path.resolve(publicPath, 'platform.html'),
+    appsRootPath: './',
+  },
+  {
+    entryName: 'window-config-app',
+    path: path.resolve(srcPath, 'components/WindowConfig/WindowConfigApp.tsx'),
+    htmlTemplate,
     appsRootPath: './',
   },
 ];
@@ -241,7 +241,7 @@ const getModuleRules = (webpackEnv) => {
     },
     {
       test: /\.(ts|js)x?$/,
-      include: [srcPath, commonSrcPath],
+      include: [srcPath],
       exclude: [/node_modules/],
       use: [
         {
@@ -289,12 +289,12 @@ const getModuleRules = (webpackEnv) => {
     },
     {
       test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-      include: [srcPath, commonStylesPath],
+      include: [srcPath],
       type: 'asset/resource',
     },
     {
       test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-      include: [srcPath, commonStylesPath],
+      include: [srcPath],
       type: 'asset/inline',
     },
   ];

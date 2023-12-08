@@ -41,7 +41,7 @@ const PlatformApp = () => {
       <TitleBar />
 
       <div className="main">
-        <Sidebar isPlatformInitialized={ isPostSetupComplete}/>
+        <Sidebar />
         <div className="content">
           <div id="body-container">
             <div

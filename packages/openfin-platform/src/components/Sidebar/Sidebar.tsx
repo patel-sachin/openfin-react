@@ -2,8 +2,14 @@ import { Button } from '@blueprintjs/core';
 import { fin } from '@openfin/core';
 import React from 'react';
 import './Sidebar.scss';
+import { WINDOW_LAYOUT_CONFIG_VIEW_NAME } from '../../common/constants';
+import { focusExistingOrOpenNewView } from '../../utils/openfinUtils';
 
-export const Sidebar = ({ isPlatformInitialized }: { isPlatformInitialized: boolean }) => {
+async function showWindowLayoutConfigInView() {
+  focusExistingOrOpenNewView(WINDOW_LAYOUT_CONFIG_VIEW_NAME);
+}
+
+export const Sidebar = () => {
   const [windowConfig, setWindowConfig] = React.useState<unknown>(null);
 
   React.useEffect(() => {
@@ -15,10 +21,8 @@ export const Sidebar = ({ isPlatformInitialized }: { isPlatformInitialized: bool
       setWindowConfig(config);
     };
 
-    if (isPlatformInitialized) {
-      testLayoutConfig();
-    }
-  }, [isPlatformInitialized]);
+    testLayoutConfig();
+  }, []);
 
   const hasWindowConfig = !!windowConfig;
 
@@ -39,6 +43,7 @@ export const Sidebar = ({ isPlatformInitialized }: { isPlatformInitialized: bool
           {hasWindowConfig && (
             <Button
               className="show-window-config-button"
+              onClick={() => showWindowLayoutConfigInView()}
             >
               Show Window Config
             </Button>
@@ -50,7 +55,6 @@ export const Sidebar = ({ isPlatformInitialized }: { isPlatformInitialized: bool
               Window config Not Available!
             </p>
           )}
-
         </div>
       </div>
     </div>

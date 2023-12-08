@@ -81,3 +81,74 @@ export const showDialog = async (options: Partial<OpenFin.PopupOptions>): Promis
 
   return { popupWindow, popupResult };
 };
+
+export const getCurrentWindow = async (): Promise<OpenFin.Window | null> => {
+  let finWindow = null;
+
+  try {
+    finWindow = await fin.Window.getCurrent();
+  } catch (err: unknown) {}
+
+  if (!finWindow) {
+    try {
+      const view = await fin.View.getCurrent();
+      finWindow = await view.getCurrentWindow();
+    } catch (err: unknown) {}
+  }
+
+  return finWindow;
+};
+
+export async function createControlAppView(
+  entryName: string,
+  maybeCustomData?: unknown,
+  parentWindow?: OpenFin.Window,
+): Promise<OpenFin.View | undefined> {
+  const finWindow = parentWindow || (await getCurrentWindow());
+  const identity = finWindow?.identity;
+  if (!identity) {
+    console.error('failed to get OpenFinIdentity | cannot create view without it!');
+    return;
+  }
+
+  const uuid = getUuid();
+  const name = `${entryName}-${uuid}`;
+  const target = { uuid: identity.uuid, name };
+
+  console.log(`name=${name}`);
+
+  const options: OpenFin.PlatformViewCreationOptions = {
+    name,
+    target,
+    url: `${window.location.origin}/${entryName}.html`,
+    detachOnClose: false,
+    customData: maybeCustomData,
+  };
+
+  const platform = fin.Platform.getCurrentSync();
+  return await platform.createView(options, identity);
+}
+
+export async function focusExistingOrOpenNewView(
+  entryName: string,
+  parentWindow?: OpenFin.Window,
+  customData?: unknown,
+) {
+  const platform = await fin.Platform.getCurrent();
+  const windows = await platform.Application.getChildWindows();
+
+  for (const window of windows) {
+    const views = await window.getCurrentViews();
+    for (const view of views) {
+      const info = await view.getInfo();
+      const isTargetView = info.url.endsWith(entryName);
+      if (isTargetView) {
+        await view.updateOptions({ customData });
+        await window.bringToFront();
+        await view.focus();
+        return;
+      }
+    }
+  }
+  await createControlAppView(entryName, customData, parentWindow);
+}
